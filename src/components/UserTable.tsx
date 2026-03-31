@@ -22,13 +22,15 @@ export function UserTable({ users, onEdit, onDelete, editingId }: UserTableProps
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Role</th>
+                        <th>Bio</th>
                         <th style={{ textAlign: 'right' }}>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {users.length === 0 ? (
                         <tr>
-                            <td colSpan={5}>
+                            <td colSpan={6}>
                                 <div className="empty-state">
                                     <div className="empty-icon">◫</div>
                                     <p>No records yet — add one above</p>
@@ -42,6 +44,8 @@ export function UserTable({ users, onEdit, onDelete, editingId }: UserTableProps
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>{user.phone}</td>
+                                <td>{user.role}</td>
+                                <td>{user.bio}</td>
                                 <td>
                                     <div className="actions-cell">
                                         <button className="btn-icon edit" onClick={() => onEdit(user)}>
